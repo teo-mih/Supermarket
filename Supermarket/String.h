@@ -16,18 +16,20 @@ class String
 
 public:
 	String();
-    String(const char* str);
-    String(const String& other);
+	String(const char* str);
+	String(const String& other);
 	String& operator=(const String& other);
 	const char* c_str() const;
 	const char* to_str() const;
 	size_t getSize() const;
 	size_t getCapacity() const;
-	
+
 	const char& operator[](size_t idx) const;
 	char& operator[](size_t idx);
 
 	String& operator+=(const String& other);
+	String& operator+=(const char& c);
+
 	friend String operator+(const String& lhs, const String& rhs);
 
 	friend bool operator==(const String& lhs, const String& rhs);

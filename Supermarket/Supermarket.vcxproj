@@ -133,6 +133,7 @@
     <ClInclude Include="String.h" />
     <ClInclude Include="SupermarketSystem.h" />
     <ClInclude Include="Vector.hpp" />
+    <ClInclude Include="Vouchers.h" />
     <ClInclude Include="Worker.h" />
   </ItemGroup>
   <ItemGroup>
@@ -142,6 +143,7 @@
     <ClCompile Include="Products.cpp" />
     <ClCompile Include="String.cpp" />
     <ClCompile Include="SupermarketSystem.cpp" />
+    <ClCompile Include="Vouchers.cpp" />
     <ClCompile Include="Worker.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

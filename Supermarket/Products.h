@@ -1,9 +1,12 @@
 #pragma once
 #include <iostream>
 #include "String.h"
+#include "Vector.hpp"
+
 struct Category {
 	String Name;
 	String Description;
+	int id;
 };
 
 class Product {
@@ -20,6 +23,7 @@ public:
 	double getPrice() const;
 	int getId() const;
 	int getQuantity() const;
+	void printReceipt(int transactionId, int cashierId, const Vector<Product>& products, double finalPrice);
 	virtual ~Product() = default;
 };
 

@@ -123,6 +123,14 @@ char& String::operator[](size_t idx)
 {
 	return this->str[idx];
 }
+String& String::operator+=(const char& c) {
+	if (length + 1 >= capacity) {
+		resize(allocateCapacity(length + 1));
+	}
+	str[length++] = c;
+	str[length] = '\0';
+	return *this;
+}
 
 String& String::operator+=(const String& other)
 {
@@ -130,10 +138,9 @@ String& String::operator+=(const String& other)
 	{
 		resize(allocateCapacity(getSize() + other.getSize()));
 	}
-
-	strncat(this->str, other.str, other.getSize());
-
+	std::memcpy(this->str + this->length, other.str, other.getSize());
 	this->length += other.getSize();
+	this->str[this->length] = '\0'; 
 
 	return *this;
 }

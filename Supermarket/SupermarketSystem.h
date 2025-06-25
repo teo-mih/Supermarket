@@ -1,7 +1,14 @@
 #pragma once
-#include "Worker.h"
+//#include "Worker.h"
 #include "Vector.hpp"
 #include "Products.h"
+#include "Vouchers.h"
+#include <fstream>
+#include <ctime>
+#include <cstdlib>
+#include "Manager.h"
+#include "Cashier.h"
+#include "sstream"
 
 struct Notification {
 	String performer;
@@ -15,7 +22,7 @@ struct Transaction {
 	std::string datetime;
 	String receiptFileName;
 };
-Vector<Transaction> transactions;
+extern Vector<Transaction> transactions;
 
 class SupermarketSystem {
 	Vector<Worker*> users;

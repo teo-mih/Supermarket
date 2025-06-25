@@ -1,9 +1,6 @@
 #include "SupermarketSystem.h"
-#include <fstream>
-#include <ctime>
-#include <cstdlib>
 
-
+Vector<Transaction> transactions;
 void SupermarketSystem::login(const int id, const String& password) {
 	for (size_t i = 0; i < users.getSize(); ++i) {
 		if (users[i]->getId() == id && users[i]->getPassword() == password) {

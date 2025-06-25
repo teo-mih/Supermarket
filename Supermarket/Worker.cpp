@@ -2,8 +2,7 @@
 
 
 Worker::Worker(Role role, short id, const String & name, const String & lastname, size_t phone_number, size_t age, const String & password)
-	: id(id), name(name), lastname(lastname), phone_number(phone_number), age(age), password(password) {
-    Role role = Role::Cashier;
+	: role(role), id(id), name(name), lastname(lastname), phone_number(phone_number), age(age), password(password), isActive(true) {
 }
 short Worker::getId() const { return id; }
 const String& Worker::getName() const { return name; }
@@ -17,12 +16,19 @@ void Worker::addWarning(const String& warning) {
     warnings.push_back(warning);
 }
 
+short Worker::GenerateId() {
+    return 100 + (std::rand() % 900); // Generates a random number between 100 and 999
+}
+
 Role Worker::getRole() const { return role; }
 void Worker::setRole(Role newRole) { role = newRole; }
 
+
+const Vector<String>& Worker::getWarnings() const { return warnings; }
+
 void Worker::clearEarliestWarning() {
     if (warnings.getSize() > 0) {
-        warnings.erase(0); // Remove the first warning
+        warnings.remove(0); // Remove the first warning
     }
 }
 

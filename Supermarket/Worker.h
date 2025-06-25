@@ -1,10 +1,12 @@
 #pragma once
 #include "String.h"
 #include "Vector.hpp"
+
 enum class Role { Cashier, Manager };
 
 class Worker
 {
+	protected:
 	short id;
 	String name;
 	String lastname;
@@ -28,12 +30,13 @@ public:
 	const String& getPassword() const;
 	void setPassword(const String& new_password);
 	void addWarning(const String& warning);
+	const Vector<String>& getWarnings() const;
 	void clearEarliestWarning();
 	void incrementTransactionCount();
 	int getTransactionCount() const;
 	bool getIsActive() const;
 	void setIsActive(bool active);
-
+	static short GenerateId();
 	void leave();
 	bool isEmployed() const;
 };
